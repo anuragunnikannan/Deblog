@@ -1,0 +1,42 @@
+﻿@model Deblog.Models.Userform
+
+@{
+    ViewData["Title"] = "Settings";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Settings</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Settings" enctype="multipart/form-data" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+
+            <img src="@TempData["userimage"]" width="100px" height="auto" style="border-radius: 50px;"/>
+
+            <div class="mb-3">
+                <label asp-for="Image" class="form-label">Profile Picture</label>
+                <input class="form-control border border-primary" asp-for="Image" type="file" accept="image/x-png,image/jpg,image/jpeg">
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Fullname" class="control-label"></label>
+                <input asp-for="Fullname" class="form-control border border-primary" />
+                <span asp-validation-for="Fullname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserDesc" class="control-label"></label>
+                <input asp-for="UserDesc" class="form-control border border-primary" />
+                <span asp-validation-for="UserDesc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary border border-primary mt-3 mb-3" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to Dashboard</a>
+</div>

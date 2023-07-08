@@ -1,0 +1,40 @@
+﻿@model Blog
+
+@{
+    ViewData["Title"] = "Add Blog";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Add Blog</h1>
+<form asp-action="AddBlog" method="post">
+    <div class="mb-3">
+        <label asp-for="BlogTitle" class="form-label"></label>
+        <input type="text" class="form-control" asp-for="BlogTitle">
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="BlogImageURL" class="form-label"></label>
+        <input type="url" class="form-control" asp-for="BlogImageURL">
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="BlogType" class="form-label"></label>
+        <select asp-for="BlogType" class="form-select">
+            <option value="public" selected>Public</option>
+            <option value="private">Private</option>
+        </select>
+    </div>
+
+
+    <div class="mb-3">
+        <label asp-for="BlogReadTime" class="form-label"></label>
+        <input type="number" class="form-control" asp-for="BlogReadTime">
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="BlogTopic" class="form-label"></label>
+        <input type="text" class="form-control" asp-for="BlogTopic">
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-3">Submit</button>
+</form>

@@ -1,0 +1,22 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+.ql-editor {
+    min-height: 60vh;
+    padding: 0px;
+    font-size: 16px;
+    font-family: Lato;
+}
+
+.ql-syntax {
+    background: #282C34;
+}
+
+.blog-details {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.blog-details i {
+    margin-right: 10px;
+}

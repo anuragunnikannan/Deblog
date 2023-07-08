@@ -1,0 +1,41 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.profilepicture {
+    width: 25px;
+    height: auto;
+    border-radius: 50%;
+}
+
+
+/*.ql-editor {
+    min-height: 60vh;
+    padding: 0px;
+}*/
+
+@media (max-width: 770px) {
+    .custom-articlelist {
+        flex-direction: column;
+    }
+
+    .custom-articleimage {
+        width: 100%;
+        height: auto;
+    }
+}

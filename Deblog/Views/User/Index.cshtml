@@ -1,0 +1,43 @@
+﻿@model List<Blog>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/bloglist.css" />
+</head>
+
+<body>
+    <h1>Dashboard</h1>
+    <img src="@TempData["userimage"]" width="100px" height="auto" style="border-radius: 50%;" />
+    <h4>@TempData["fullname"] (@@@TempData["username"])</h4>
+    <p>@TempData["userdesc"]</p>
+    <a asp-action="Settings" asp-controller="User" class="btn btn-primary me-2">User Settings</a>
+
+    <div class="mt-3">
+        <h3>Your Blogs</h3>
+        <div class="blogs">
+            @foreach (var obj in Model)
+            {
+                    <div class="border border-primary custom-articlelist mt-3">
+                        <a class="article text-primary" asp-action="ViewBlog" asp-controller="Blog" asp-route-id="@obj.BlogId">
+                            <div>
+                                <img class="custom-articleimage" src="@obj.BlogImageURL">
+                            </div>
+                            <div>
+                                <p class="custom-blogtitle">@obj.BlogTitle</p>
+                                <p>Topic: @obj.BlogTopic</p>
+                                <p>@obj.BlogReadTime min read</p>
+                                <div class="custom-blogactionbtn">
+                                    <a class="btn btn-primary" asp-action="WriteBlog" asp-controller="Blog" asp-route-id="@obj.BlogId">Write</a>
+                                    <a class="btn btn-warning" asp-action="EditBlog" asp-controller="Blog" asp-route-id="@obj.BlogId">Edit</a>
+                                    <a class="btn btn-danger" asp-action="DeleteBlog" asp-controller="Blog" asp-route-id="@obj.BlogId">Delete</a>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+            }
+        </div>
+    </div>
+</body>

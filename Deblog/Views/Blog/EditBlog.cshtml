@@ -1,0 +1,49 @@
+﻿@model Blog
+@{
+    ViewData["Title"] = "Edit Blog";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit Blog</h1>
+<form asp-action="EditBlog" method="post">
+    <div class="mb-3">
+        <input type="text" class="form-control" asp-for="BlogId" hidden>
+        <input type="text" class="form-control" asp-for="BlogAuthor" hidden />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="BlogTitle" class="form-label"></label>
+        <input type="text" class="form-control" asp-for="BlogTitle">
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="BlogImageURL" class="form-label"></label>
+        <input type="url" class="form-control" asp-for="BlogImageURL">
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="BlogType" class="form-label"></label>
+        <input type="text" class="form-control" asp-for="BlogType">
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="BlogReadTime" class="form-label"></label>
+        <input type="number" class="form-control" asp-for="BlogReadTime">
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="BlogTopic" class="form-label"></label>
+        <input type="text" class="form-control" asp-for="BlogTopic">
+    </div>
+
+    <div>
+        <label asp-for="BlogStatus" class="form-label"></label>
+        <select asp-for="BlogStatus" class="form-select" aria-label="Default select example">
+            <option value="draft" selected>Draft</option>
+            <option value="published">Publish</option>
+        </select>
+    </div>
+    
+
+    <button type="submit" class="btn btn-primary mt-3">Submit</button>
+</form>

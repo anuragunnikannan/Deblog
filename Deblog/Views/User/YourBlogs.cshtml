@@ -1,0 +1,22 @@
+﻿@model List<Blog>
+@{
+    ViewData["Title"] = "Your Blogs";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Your Blogs</h1>
+<div class="container-md">
+    @foreach (var obj in Model)
+    {
+        <div class="border border-primary custom-articlelist">
+            <div>
+                <img src="@obj.BlogImageURL" width="300px" height="auto">
+            </div>
+            <div>
+				<p class="custom-blogtitle">@obj.BlogTitle</p>
+				<p>Topic: @obj.BlogTopic</p>
+				<p>@obj.BlogReadTime min read</p>
+            </div>
+        </div>
+    }
+</div>

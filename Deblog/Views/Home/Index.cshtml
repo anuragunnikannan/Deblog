@@ -1,0 +1,33 @@
+﻿@model List<Blog>
+
+@{
+    ViewData["Title"] = "Deblog";
+}
+<head>
+    <link rel="stylesheet" href="~/css/bloglist.css" />
+</head>
+<body>
+    <div>
+        <h1 class="mb-3">Blogs</h1>
+        <div class="blogs">
+            @foreach (var obj in Model)
+            {
+                
+                <a class="article text-primary" asp-action="ViewBlog" asp-controller="Blog" asp-route-id="@obj.BlogId">
+                    <div class="border border-primary custom-articlelist">
+                        <div>
+                            <img class="custom-articleimage" src="@obj.BlogImageURL" width="300px" height="180px">
+                        </div>
+                        <div class="custom-article">
+                            <p class="custom-blogtitle">@obj.BlogTitle</p>
+                            <p>Topic: @obj.BlogTopic</p>
+                            <p>@obj.BlogReadTime min read</p>
+                        </div>
+                    </div>
+                </a>
+            }
+        </div>
+        
+    </div>
+
+</body>
